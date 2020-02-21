@@ -6,9 +6,9 @@
 既要关注预测结果的准确性，还需要考虑处理问题的效率
 3，CTR预测常常会用到逻辑回归（Logistic Regression），以传统的批量（batch）算法无法有效地处理超大规模的数据集和在线数据流，
 但同时逻辑回归在非线性问题时表现难以达到预期效果。本论文将采用GBDT(Gradient Boosting Decision Tree)进行点击率的预测。
-在GBDT的工程实现时，XGBoost和lightGBM两个模型都有很好的表现，所以将同时采用两个模型对用户点击率进行预测。
-
-关键词：广告匹配；点击率；大数据；GBDT;XGBoost;lightGBM
+在GBDT算法的工程实现时，因为lightGBM模型在有很好的表现，在较高的准确率的同时，也能够很好的应对大规模数据问题的处理，
+所以采用lightGBM构建模型对用户点击率进行预测。
+关键词：广告匹配；点击率；大数据；GBDT;lightGBM
 
 
 
