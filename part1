@@ -22,17 +22,14 @@ CTR预测是一个有庞大数据的复杂工程，优秀的特征提取及适�
 所以说对于CTR的成果实用价值不单单是一方面的。
 
 3国内外研究现状
-LR
-CTR预测较为经典的研究是Practical Lessons From Predicting Clicks on Ads at Facebook，这是Faceboook在2014年
-FM 与 FFM
-google先后三年时间（2010年-2013年）从理论研究到实际工程化实现的FTRL（Follow-the-regularized-Leader）算法;
-Alibaba团队MLR；
-2. LR 海量高纬离散特征 (广点通精排)
-3. GBDT 少量低纬连续特征 (Yahoo & Bing)
-4. GBDT+LR (FaceBook)
-5. FM+DNN (百度凤巢)
-6. MLR (阿里妈妈)
-7. FTRL_Proximal (Google)
+
+   1. LR 海量高纬离散特征 (广点通精排)
+   2. GBDT 少量低纬连续特征 (Yahoo & Bing)
+   3. GBDT+LR (FaceBook)
+   4. FM+DNN (百度凤巢)
+   5. MLR (阿里妈妈)
+   6. FTRL_Proximal (Google)
+   7. DIN
 
 
 
