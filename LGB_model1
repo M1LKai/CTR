@@ -1,4 +1,4 @@
-mport numpy as np
+import numpy as np
 import pandas as pd
 import time
 import datetime
@@ -38,7 +38,7 @@ train1 = pd.read_table('./data/train1.txt',sep='\t',encoding='utf-8')
 train2 = pd.read_table('./data/train2.txt',sep='\t',encoding='utf-8')
 train = pd.concat([train1, train2], axis=0, ignore_index=True)#连接
 train.drop_duplicates(subset=None, keep='first', inplace=False)#去重
-test = pd.read_table('./data/test_feature2.txt',sep='\t',encoding='utf-8')
+test = pd.read_table('./data/test_feature1.txt',sep='\t',encoding='utf-8')
 res = test.loc[:, ['instance_id']]
 test['label'] = -1
 train = train.fillna(-1)
@@ -196,6 +196,15 @@ for i in range(n):
     df[col_name] = ((se - se.min()) / (se.max() - se.min()) * 100).astype(int).values
     num += 1
 
+
+##########减小内存
+for i in data.columns:
+    if (i != 'instance_id'):
+        if (data[i].dtypes == 'int64'):
+           data[i] = data[i].astype('int16')
+        if (data[i].dtypes == 'int32'):
+            data[i] = data[i].astype('int16')
+
 print('Begin stat...')  ##再加入离散特征
 n = len(col_type)
 for i in range(n):
@@ -292,6 +301,4 @@ print(sum(score) / 5)
 print(res.head(10))
 print(res['predicted_score'].describe())
 
-now = datetime.datetime.now()
-now = now.strftime('%m-%d-%H-%M')
-res.to_csv( "./result/lgb_m1.csv" % now, index=False)
+res.to_csv( "./result/lgb_m1.csv" , index=False)
